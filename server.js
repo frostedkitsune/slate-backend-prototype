@@ -40,6 +40,10 @@ app.get('/', (_req, res) => {
     res.render('login');
 });
 
+app.get('/reset-password', (_req, res) => {
+    res.text('not implemented yet');
+});
+
 app.get('/dashboard', (_req, res) => {
     res.render('dashboard');
 });
