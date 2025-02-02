@@ -89,7 +89,8 @@ label {
 }
 
 #submit,
-#logout {
+#logout,
+#fetch-achievements {
     width: 320px;
     margin: 5px 0;
     padding: 8px;
@@ -108,13 +109,15 @@ label {
 }
 
 #submit:hover,
-#logout:hover {
+#logout:hover,
+#fetch-achievements:hover {
     border-color: #010157;
 }
 
 #role,
 #submit,
-#logout {
+#logout,
+#fetch-achievements {
     display: block;
     cursor: pointer;
 }
@@ -150,4 +153,8 @@ a:visited {
 
 #dashboard p {
     margin: .8rem 0 2rem 0;
+}
+
+#achievements {
+    padding: 1rem;
 }

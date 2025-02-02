@@ -33,15 +33,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         });
 
-        // Fetch role-specific content
-        // const response = await fetch(`/student/achievements/${decodedPayload.id}`, {
-        //     method: 'GET',
-        //     headers: {
-        //         'Authorization': `Bearer ${accessToken}`,
-        //         'Content-Type': 'application/json',
-        //     }
-        // });
-
         if (!response.ok) {
             // If the access token is expired, try to refresh it
             if (response.status === 401) {
@@ -77,7 +68,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Render dashboard
         const dashboardContainer = document.getElementById('app');
         dashboardContainer.innerHTML = dashboard;
-        addLogoutListener();
+        setTimeout(() => {
+            addLogoutListener();
+            addAchievementFetcherListener();
+        }, 200); //as the DOM may not be loaded instantly
 
     } catch (error) {
         console.error(error);

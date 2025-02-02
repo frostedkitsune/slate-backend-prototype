@@ -72,6 +72,49 @@ app.get('/student', authenticateUser, (req, res) => {
     res.render('student', { user: req.user });
 });
 
+// linked student route
+app.get('/linked-student-id', authenticateUser, async (req, res) => {
+    const userId = req.user.id // get the user id
+
+    try {
+        const result = await pool.query('SELECT linked_student_id FROM Users WHERE id = $1', [userId]);
+
+        if (!result.rows) {
+            return res.status(401).json({ message: 'Unauthorized' });
+        }
+
+        res.json({ id: result.rows[0].linked_student_id });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+// student achievements route
+app.get('/student/achievements/:studentId', authenticateUser, async (req, res) => {
+    const studentId = req.params.studentId // get the user id
+
+    try {
+
+        const result = await pool.query(`SELECT 
+                                            u.name AS name,
+                                            sa.school_name,
+                                            sa.achievements
+                                        FROM 
+                                            StudentAchievements sa
+                                        JOIN 
+                                            users u ON sa.student_id = u.id
+                                        WHERE 
+                                            sa.student_id = $1
+                                        `, [studentId]);
+        res.json(result.rows);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+
 // start server
 const PORT = process.env.PORT || 3000;
 const colors = {

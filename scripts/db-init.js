@@ -2,11 +2,11 @@ const { Client } = require('pg');
 const bcrypt = require('bcrypt');
 
 const client = new Client({
-    user: 'sdev',
-    host: '127.0.0.1',
-    database: 'slatebackend',
-    password: 'p123',
-    port: 5432,
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
+    port: process.env.DB_PORT,
 });
 
 async function initializeDB() {
@@ -28,7 +28,6 @@ async function initializeDB() {
         await client.query(`
             CREATE TABLE StudentAchievements (
                 student_id INT PRIMARY KEY,
-                name VARCHAR(255) NOT NULL,
                 school_name VARCHAR(255) NOT NULL,
                 achievements TEXT NOT NULL,
                 FOREIGN KEY (student_id) REFERENCES Users(id) ON DELETE CASCADE
@@ -58,8 +57,8 @@ async function initializeDB() {
         `);
         console.log("Table: Users | Affected: " + userInsertRes.rowCount + " rows");
         const achievementInsertRes = await client.query(`
-            INSERT INTO StudentAchievements (student_id, name, school_name, achievements) VALUES
-            (3, 'Riya Sharma', 'ABC School', 'Science Olympiad Winner');
+            INSERT INTO StudentAchievements (student_id, school_name, achievements) VALUES
+            (3, 'ABC School', 'Science Olympiad Winner');
         `);
         console.log("Table: StudentAchievements | Affected " + achievementInsertRes.rowCount + " rows");
         console.log("\x1b[38;5;10mDone.\x1b[0m");
