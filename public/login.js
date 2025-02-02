@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // handle successful login
             console.log('Login successful:', data);
+
             // saving tokens to local storage with respective keys
             localStorage.setItem('accessToken', data.accessToken);
             localStorage.setItem('refreshToken', data.refreshToken);

@@ -1,7 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+function addLogoutListener() {
     const logoutButton = document.getElementById("logout");
+    console.log("jii");
 
-    logoutButton.addEventListener("click", async function() {
+    logoutButton.addEventListener("click", async function () {
         const refreshToken = localStorage.getItem('refreshToken');
 
         if (!refreshToken) {
@@ -35,4 +36,4 @@ document.addEventListener("DOMContentLoaded", function() {
             alert('Logout failed. Please try again.');
         }
     });
-});
+}

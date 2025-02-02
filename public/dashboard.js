@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Render dashboard
         const dashboardContainer = document.getElementById('app');
         dashboardContainer.innerHTML = dashboard;
+        addLogoutListener();
 
     } catch (error) {
         console.error(error);
