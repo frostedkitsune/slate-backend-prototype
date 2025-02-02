@@ -12,7 +12,7 @@ Role Based Authentication System and Backend Prototype for Slate
 - Normalized and updated database schema to remove redundant data ✅
 - Access & manage student achievements on school dashboard ❌
 - Forgot password ❌
-- Postman collection for testing ❌
+- Postman collection for testing (although an AI generated documentation is given below) ❌
 
 ## Technologies Used
 
