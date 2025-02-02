@@ -1,0 +1,19 @@
+{
+  "name": "slate-backend",
+  "version": "1.0.0",
+  "description": "slate backend prototype",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --env-file .env --watch server.js && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1",
+    "pug": "^3.0.3"
+  }
+}

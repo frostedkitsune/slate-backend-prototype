@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Manrope:wght@200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    color: #010157;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#app {
+    display: flex;
+    padding: 8px;
+    height: 100%;
+    gap: 8px;
+}
+
+/* login styles */
+
+#hero {
+    width: 40%;
+    background-color: #fff2e8;
+    border-radius: 16px;
+}
+
+#hero h1 {
+    margin: 16px;
+    font-size: 1.4rem;
+    font-family: "Freeman", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#hero img {
+    width: 130%;
+    margin-top: 10%;
+    margin-left: 4%;
+    border-radius: 32px;
+}
+
+#form-root {
+    width: 100%;
+}
+
+#form-root h1 {
+    width: 100%;
+    margin-top: 8%;
+    text-align: center;
+    font-weight: bold;
+}
+
+form {
+    display: block;
+    width: fit-content;
+    margin: 64px auto;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+}
+
+#email,
+#password,
+#role {
+    width: 320px;
+    margin: 8px 0 16px 0;
+    padding: 8px;
+    background-color: #ffffff;
+    outline: none;
+    border: 2px solid #cacaca;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+
+#email:hover,
+#password:hover,
+#role:hover {
+    border-color: #FD9888;
+}
+
+#submit,
+#logout {
+    width: 320px;
+    margin: 5px 0;
+    padding: 8px;
+    font-weight: 800;
+    background-color: #FD9888;
+    border-radius: 4px;
+    border: 2px solid #FD9888;
+    transition: border-color 0.3s;
+}
+
+#logout {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 100px;
+}
+
+#submit:hover,
+#logout:hover {
+    border-color: #010157;
+}
+
+#role,
+#submit,
+#logout {
+    display: block;
+    cursor: pointer;
+}
+
+::placeholder, select{
+    color: #9c9c9c;
+    font-weight: 500;
+}
+
+#role option {
+    font-family: sans-serif;
+}
+
+a {
+    display: block;
+    width: 320px;
+    font-size: .8rem;
+    text-align: right;
+}
+
+a,
+a:active,
+a:hover,
+a:visited {
+    text-decoration: none;
+}
+
+/* dashboard styles */
+
+#dashboard {
+    padding: 1rem;
+}
+
+#dashboard p {
+    margin: .8rem 0 2rem 0;
+}

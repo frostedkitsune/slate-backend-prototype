@@ -1,0 +1,26 @@
+extends layout
+
+block app
+    div#app
+        div#hero
+            h1 slate.
+            img(src="/boy.png", alt="cant show")
+        div#form-root
+            h1 Login
+            form
+                label(for="email") Email
+                input#email(type="email", name="email", placeholder="jack@personal.email")
+
+                label(for="password") Password
+                input#password(type="password", name="password", placeholder="your password here")
+                a(href="/reset-password") Forgot Password?
+
+                label(for="role") Role
+                select#role(name="role")
+                    option(value="School") School
+                    option(value="Parent") Parent
+                    option(value="Student") Student
+
+                input#submit(type="button", value="log in")
+    script(src="login.js") 
+
